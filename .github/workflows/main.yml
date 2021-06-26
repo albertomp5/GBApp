@@ -23,7 +23,7 @@ jobs:
       working-directory: web-app/vue-frontend-web
     - name: create final location directory
       run: mkdir static
-      working-directory: node-backend-server
+      working-directory: web-app/node-backend-server
     - name: copy web to final location
       run: mv web-app/vue-frontend-web/dist/* web-app/node-backend-server/static/
   
