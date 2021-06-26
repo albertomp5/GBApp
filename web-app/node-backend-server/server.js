@@ -33,6 +33,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //para las imagenes
 app.use('/static', express.static('upload'));
 
+//para la web
+app.use('/', express.static('static'));
+
 //rutas
 var userRoutes = require('./routes/router');
 app.use('/api', userRoutes);
