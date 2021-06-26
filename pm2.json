@@ -1,0 +1,12 @@
+{
+  "apps" : [
+    {
+      "name": "gba-web-application",
+      "interpreter": "/usr/bin/node",
+      "cwd": "web-app/node-backend-server",
+      "script": "server.js",
+      "out_file": "/var/log/gba.log",
+      "error_file": "/var/log/gba.log"
+    }
+  ]
+}
