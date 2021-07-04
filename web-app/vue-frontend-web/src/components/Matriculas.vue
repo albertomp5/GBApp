@@ -4,8 +4,10 @@
     <article class="actividad-item" id="actividad-template">
       <div class="image-wrap">
         <img
-          src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
+          :src="require('../assets/gbapp1.png')"
           alt="Tipo1"
+          width="128"
+          height="166"
         />
       </div>
       <h2>Matrícula tipo 1</h2>
@@ -17,8 +19,10 @@
     <article class="actividad-item" id="actividad-template">
       <div class="image-wrap">
         <img
-          src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
+          :src="require('../assets/gbapp1.png')"
           alt="Tipo2"
+          width="128"
+          height="166"
         />
       </div>
       <h2>Matrícula tipo 2</h2>
@@ -30,8 +34,10 @@
     <article class="actividad-item" id="actividad-template">
       <div class="image-wrap">
         <img
-          src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
+          :src="require('../assets/gbapp1.png')"
           alt="Tipo3"
+          width="128"
+          height="166"
         />
       </div>
       <h2>Matrícula tipo 3</h2>
