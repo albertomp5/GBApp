@@ -79,7 +79,7 @@ export default {
       content: "",
       successful: false,
       sharing: {
-        url: "http://localhost:8080/",
+        url: "http://gbapp.ddns.net:4000/",
         title: "Bienvenido a TFGGYM!",
         description: "",
         quote:
