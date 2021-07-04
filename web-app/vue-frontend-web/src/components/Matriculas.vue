@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Cambiar img src -->
     <article class="actividad-item" id="actividad-template">
       <div class="image-wrap">
         <img
