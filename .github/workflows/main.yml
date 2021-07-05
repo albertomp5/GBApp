@@ -2,7 +2,7 @@ name: deploy
 
 on:
   push:
-    branches: https-integration
+    branches: main
 
 jobs:
   download: 
