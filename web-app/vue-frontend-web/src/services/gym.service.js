@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://gbapp.ddns.net:4000/api/gym/';
+const API_URL = 'https://gbapp.ddns.net:4000/api/gym/';
 
 class GymService {
 
