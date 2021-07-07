@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
 const https = require("https");
-
+const fs = require('fs');
 
 const app = express();
 
@@ -64,9 +64,9 @@ if(USE_HTTPS === true){
   
   // https server
   https.createServer({
-      ca: '/root/certs/fullchain.pem',
-      key: '/root/certs/privkey.pem',
-      cert: '/root/certs/cert.pem'
+      ca: fs.readFileSync('/root/certs/fullchain.pem'),
+      key: fs.readFileSync('/root/certs/privkey.pem'),
+      cert: fs.readFileSync('/root/certs/cert.pem')
   }, app).on("error", (e) => {                
       console.log(`[HTTPS] ${e}`);
   }).listen(HTTPS_PORT, () => {
