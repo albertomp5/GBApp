@@ -3,6 +3,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const http = require("http");
+const https = require("https");
+
 
 const app = express();
 
@@ -40,11 +43,47 @@ app.use('/', express.static('static'));
 var userRoutes = require('./routes/router');
 app.use('/api', userRoutes);
 
-// set port, listen for requests
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+
+
+// HTTPS
+const USE_HTTPS = process.env.USE_HTTPS || true;
+const HTTP_PORT = process.env.PORT || 80;
+const HTTPS_PORT = process.env.HTTPS_PORT || 443;
+
+if(USE_HTTPS === true){
+
+  // redirect to https
+  http.createServer(function(request, response){
+      response.writeHead(301, { Location: 'https://' + request.headers.host + request.url });
+      response.end();
+  }).on("error", (e) => {
+      console.log(`[HTTP] ${e}`);
+  }).listen(HTTP_PORT, () => {
+      console.log(`[HTTP] Application redirection listening on ${HTTP_PORT}`);
+  });
+  
+  // https server
+  https.createServer({
+      ca: '/root/certs/fullchain.pem',
+      key: '/root/certs/privkey.pem',
+      cert: '/root/certs/cert.pem'
+  }, app).on("error", (e) => {                
+      console.log(`[HTTPS] ${e}`);
+  }).listen(HTTPS_PORT, () => {
+    console.log(`[HTTP] Application listening on ${HTTPS_PORT}`);  
+  });
+
+}else{
+  
+  // register http server
+  http.createServer(app).on("error", (e) => {                
+    console.log(`[HTTP] ${e}`);
+  }).listen(HTTP_PORT, () => {
+    console.log(`[HTTP] Application listening on ${HTTP_PORT}`);
+  });
+
+}
+
 
 const db = require("./models");
 const Role = db.role;
