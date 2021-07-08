@@ -14,6 +14,7 @@ const sendEmail = async (email, subject, payload, template) => {
         // create reusable transporter object using the default SMTP transport
         //no funciona con el de la usal
         const transporter = nodemailer.createTransport({
+            service: 'Gmail',
             host: 'smtp.gmail.com',
             port: 465,
             secure: true, // use SSL
