@@ -79,8 +79,8 @@ export default {
       content: "",
       successful: false,
       sharing: {
-        url: "http://gbapp.ddns.net:4000/",
-        title: "Bienvenido a TFGGYM!",
+        url: "gbapp.ddns.net",
+        title: "Bienvenido a GBApp!",
         description: "",
         quote:
           "Desarrollo de una plataforma o aplicación web para la gestión de un gimnasio.",
