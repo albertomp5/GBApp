@@ -26,7 +26,7 @@ const requestPasswordReset = async (email) => {
       createdAt: Date.now(),
     }).save();
   
-    const link = `gbapp.ddns.net/reset-password/token=${resetToken}&id=${user._id}`; ///token=${resetToken}&id=${user._id}
+    const link = `gbapp.ddns.net/#/reset-password/token=${resetToken}&id=${user._id}`; ///token=${resetToken}&id=${user._id}
     sendEmail(
       user.email,
       "Password Reset Request",
