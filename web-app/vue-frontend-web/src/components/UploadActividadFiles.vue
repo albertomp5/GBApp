@@ -49,7 +49,7 @@
         <v-carousel-item
           v-for="(file, index) in fileInfos"
           :key="index"
-          :src="'http://gbapp.ddns.net:4000/static/actividades/' + file.name"
+          :src="'https://gbapp.ddns.net/static/actividades/' + file.name"
           contain
           reverse-transition="fade-transition"
           transition="fade-transition"
