@@ -28,7 +28,7 @@
       
       <v-app-bar-title>
         <v-btn dark color="#447fa6" router to="/profile">
-          <span class="font-weight-light">TFG</span> <span>GYM</span></v-btn
+          <span>GBA</span> <span class="font-weight-light">pp</span></v-btn
         >
       </v-app-bar-title>
       <v-spacer></v-spacer>
